@@ -1,0 +1,12 @@
+# this manual workflow must run on API call. and cannot be run as usual manual call using GUI or CLI
+
+on:
+  repository_dispatch:
+    types: [incident_report]
+
+jobs:
+  handle-incident:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print incident details
+        run: echo "Incident reported"
