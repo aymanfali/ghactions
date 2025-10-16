@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  job_1:
+      runs-on: ubuntu-latest
+      steps:
+        - run: |
+            npm install
+            npm run build
+          working-directory: ./tmp
+          shell: bash 
+          # pwsh, cnd, powershell, python
+
+        # run using nodejs syntax
+        - run: |
+            console.log("Environment Variables:");
+            for (const [key, value] of Object.entries(process.env)) {
+              console.log(`${key}=${value}`);
+            }
+          shell: node {0} #execute the run commands using this shell
