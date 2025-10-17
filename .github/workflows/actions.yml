@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  actions-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      # uses: .github/actions/Greeting@v1
+        uses: actions/checkout@5.0.0
+        with:
+          name: Ayman
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
